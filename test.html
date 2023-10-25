@@ -1,0 +1,26 @@
+<div id="root">
+<p id="text"></p>
+<button id="btnOnclick" onclick='handleClick()'>
+    buttonOnClick
+</button>
+</div>
+
+<script>
+    const root = document.querySelector("#root")
+    root.append(document.querySelector("#btnText").cloneNode(true))
+
+    root.append(document.createElement('br'))
+
+    const btnEventListener = document.createElement('button')
+    
+
+    btnEventListener.textContent = 'btnEventListener'
+    btnEventListener.addEventListener('click', () => {alert('clicked')})
+    
+    root.append(btnEventListener)
+    root.append(btnEventListener.cloneNode(true))
+
+    function handleClick ()  {
+        alert('clicked')
+    }
+</script>
